@@ -1,0 +1,138 @@
+html {
+    box-sizing: border-box;
+
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background: #ffffff url('../img/Blue-2.jpg');     /* Background pattern from - Pixabay */
+    font-family: 'Alfa Slab One', cursive;            /* Font - Google Fonts */
+  }
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+h1 {
+    font-family: 'Alfa Slab One', cursive;            /* Font - Google Fonts */
+    font-weight: 300;
+}
+
+p {
+  padding: 0;
+  margin: 0;
+}
+/*
+ * Styles for the deck of cards
+ */
+
+.deck {
+    width: 660px;
+    min-height: 680px;
+    padding: 25px;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.deck .card {
+    height: 125px;
+    width: 125px;
+    background: rebeccapurple;
+    font-size: 0;
+    color: navy;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+}
+
+.deck .card.open {
+    background: lavender;       /*** passes AA required contrast. ration 4.5 -This is 13.01****/
+    cursor: default;
+}
+
+.deck .card.show {
+    font-size: 3.5em;
+}
+
+.deck .card.match {
+    cursor: default;
+    background: paleturquoise;  /*** passes AA required contrast. ratio is 4.5 - This is 12.42***/
+    font-size: 2em;             /*** large font shifts to smaller font when matched.***/
+}
+
+/*
+ * Styles for the Score Panel
+ */
+
+.score-panel {
+    width: 32%;
+}
+
+.score-panel .stars {
+    margin: 0 1.8em 0 1.8em;
+    padding: 0;
+    display: inline-block;
+    color: rebeccapurple;
+}
+
+.score-panel .stars li {
+    list-style: none;
+    display: inline-block;
+}
+
+.score-panel .restart {
+    color: black;
+    float: right;    margin: 0 1.8em 0 1.8em;
+
+    cursor: pointer;
+    font-size: 1.2em;
+}
+
+dialog {
+  background: #CCCCFF;    /*** passes AA required contrast. ration 4.5 -This is 13.65 ****/
+  animation-name: winner;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  top: 43.5%;
+  height: 15em;
+  width: 25em;
+  text-align: center;
+  z-index: 70;
+  justify-content: center;
+  align-items: center;
+}
+
+dialog ul {
+  padding: 0;
+}
+
+dialog li{
+  list-style: none;
+  display: inline-block;
+}
+
+@keyframes winner {
+    from {top: 0%}
+    to {top: 43.5%}
+}
